@@ -1,0 +1,18 @@
+mpirun -n 8 python tools/train.py \
+--batch_size 8 \
+--batch_sum 256 \
+--trainable_layers 3 \
+--selector_bias 3.0 \
+--norm_layer frozen_bn \
+--max_epochs 90 \
+--eval_step 1 \
+--dataset_type refclef \
+--splitBy berkeley \
+--translate \
+--multi_scale \
+--arch_loss_coef 0.1 \
+--lr_base 1e-5 \
+--lr_visual 1e-6 \
+--lr_lang 1e-6 \
+--comments "train_step_1_arch_coef_0.1_bias_init_3" \
+--pretrained_path "work_dir/refclef/(Aug23_14-37)_train_arch_coef_0.1_bias_init_3/epoch-best.ckpt"

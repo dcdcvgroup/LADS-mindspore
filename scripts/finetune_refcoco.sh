@@ -1,0 +1,17 @@
+mpirun -n 8 python tools/train_new.py \
+--batch_size 8 \
+--batch_sum 256 \
+--trainable_layers 3 \
+--norm_layer frozen_bn \
+--max_epochs 30 \
+--eval_step 1 \
+--drop_epochs 20 \
+--dataset_type refcoco \
+--splitBy unc \
+--translate \
+--multi_scale \
+--lr_base 1e-4 \
+--lr_visual 1e-5 \
+--lr_lang 1e-5 \
+--pretrained_path {PRETRAINED_FILE} \
+--comments "finetune_refcoco"
